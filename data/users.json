@@ -1,0 +1,43 @@
+[
+  {
+    "id": 1,
+    "firstName": "Ruando",
+    "lastName": "Deane",
+    "email": "raundodeane07@gmail.com",
+    "password": "pp00001111",
+    "category": "admin",
+    "image": "ruando.jpg"
+  },
+  {
+    "id": 2,
+    "firstName": "Brad",
+    "lastName": "pitt",
+    "email": "Bradpitt33@gmail.com",
+    "password": "Bradddpiittt333",
+    "image": ".jpg"
+  },
+  {
+    "id": 3,
+    "firstName": "Elon",
+    "lastName": "Musk",
+    "email": "Emusk55@gmail.com",
+    "password": "emusk556",
+    "image": ".png"
+  },
+  {
+    "id": 4,
+    "firstName": "Lionel",
+    "lastName": "Messi",
+    "email": "elGOAT15@gmail.com",
+    "password": "LAcabra15",
+    "image": ".jpg"
+  },
+  {
+  "id": 5,
+  "firstName": "Antonella",
+  "lastName": "Mcdonalds",
+  "email": "antomc14@gmail.com",
+  "password": "amc1615",
+  "image": ".jpg"
+}
+]

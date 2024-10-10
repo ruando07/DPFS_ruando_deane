@@ -1,0 +1,86 @@
+/* Contenedor principal de edición del producto */
+.edit-product {
+    margin-top: 100px!important;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Título de la página de edición */
+.edit-title {
+    margin-top: -5px;
+    text-align: center;
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Estilo del formulario */
+.edit-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Estilo de los grupos de formulario */
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilo de los labels */
+.form-group label {
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Estilo de los campos de texto */
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group textarea {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: border-color 0.3s;
+}
+
+/* Estilo para el campo de texto en focus */
+.form-group input[type="text"]:focus,
+.form-group input[type="number"]:focus,
+.form-group textarea:focus {
+    border-color: #28a745;
+    outline: none;
+}
+
+/* Estilo del botón */
+.btn-primary {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover del botón */
+.btn-primary:hover {
+    background-color: #218838;
+}
+
+/* Active del botón */
+.btn-primary:active {
+    background-color: #1e7e34;
+}

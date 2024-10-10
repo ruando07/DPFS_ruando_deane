@@ -1,0 +1,88 @@
+/* Estilo del contenedor del formulario de registro */
+.container.register-form {
+    max-width: 400px; /* Establecer un ancho máximo más pequeño para el formulario */
+    margin: 120px auto; /* Centrar el formulario y agregar margen superior */
+    background-color: #fff;
+    padding: 20px 40px; /* Espaciado interno */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  /* Título del formulario */
+  h4 {
+    text-align: center;
+    font-size: 1.8em; /* Un poco más pequeño */
+    color: #333;
+    margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif; /* Estilo de fuente para el título */
+  }
+  
+  /* Grupo de los inputs */
+  .form-group {
+    margin-bottom: 15px; /* Reducir el espacio entre los grupos */
+  }
+  
+  .form-group label {
+    font-weight: bold;
+    font-size: 0.9em; /* Reducir el tamaño de las etiquetas */
+    margin-bottom: 5px;
+    display: block;
+  }
+  
+  .form-group input {
+    width: 100%; /* Hacer que los inputs ocupen todo el ancho del grupo */
+    padding: 10px; /* Espaciado interno */
+    font-size: 0.9em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Asegurarse de que el padding no afecte el ancho */
+    transition: border-color 0.3s;
+  }
+  
+  .form-group input:focus {
+    border-color: #28a745; /* Color verde al hacer focus */
+    outline: none;
+  }
+  
+  /* Estilo del botón */
+  button.btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+  }
+  
+  button.btn:hover {
+    background-color: #218838;
+  }
+  
+  button.btn:active {
+    background-color: #1e7e34;
+  }
+  
+  /* Estilo para mensajes de error */
+  .error {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+  /* Ajustes adicionales para pantallas pequeñas */
+  @media (max-width: 480px) {
+    .container.register-form {
+      padding: 20px; /* Reducir el espaciado interno para pantallas más pequeñas */
+    }
+  
+    h1 {
+      font-size: 1.6em; /* Reducir el tamaño del título en pantallas pequeñas */
+    }
+  }
+  

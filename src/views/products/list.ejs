@@ -1,0 +1,50 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+
+<div class="container">
+  <h1>Productos</h1>
+
+  <!-- Botón de carrito en la parte superior -->
+  <div class="cart-icon">
+    <i class="fas fa-shopping-cart"></i> 
+    <span class="cart-count">0</span>
+  </div>
+
+  <!-- Contenedor de productos -->
+  <div class="projects-grid">
+    <% products.forEach(product => { %>
+      <div class="project-card">
+        <img src="/images/<%= product.image %>" alt="<%= product.name %>" class="project-image">
+        <div class="project-content">
+          <h3><%= product.name %></h3>
+          <p><%= product.description %></p>
+          <p>$<%= product.price %></p>
+          <div class="project-buttons">
+            <a href="/products/<%= product.id %>" class="btn btn-detalle">Ver detalle</a>
+            <button class="btn add-to-cart" data-id="<%= product.id %>" data-name="<%= product.name %>" data-price="<%= product.price %>">Agregar</button>
+          </div>
+        </div>
+      </div>
+    <% }) %>
+  </div>
+
+  <!-- Panel del carrito de compras -->
+  <div class="cart-panel">
+    <h2>Carrito de Compras</h2>
+    <div class="cart-items">
+      <!-- Aquí se mostrarán los productos agregados -->
+    </div>
+    <div class="cart-total">
+      <p>Total a pagar: $<span class="total-price">0</span></p>
+    </div>
+    <div class="cart-actions">
+      <button class="btn-primary checkout-btn">Realizar Pedido</button>
+      <button class="btn-secondary empty-cart-btn">Vaciar Carrito</button> <!-- Botón de vaciar carrito -->
+    </div>
+  </div>
+
+</div>
+
+<script src="/js/script.js"></script>
+
+<%- include('../partials/footer') %>

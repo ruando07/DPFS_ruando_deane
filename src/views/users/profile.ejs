@@ -1,0 +1,22 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+
+<div class="container profile-container">
+  <h2 class="profile-title">Perfil de Usuario</h2>
+
+  <!-- Mostrar los datos del usuario si están presentes -->
+  <% if (user) { %>
+    <div class="profile-details">
+      <p class="profile-name">Nombre: <%= user.firstName %> <%= user.lastName %></p>
+      <p class="profile-email">Email: <%= user.email %></p>
+      <p class="profile-image-label">Imagen de perfil:</p>
+      <img class="profile-image" src="/images/users/<%= user.profileImage %>" alt="Imagen de perfil">
+    </div>
+  <% } else { %>
+    <p class="no-user-message">No se encontraron datos del usuario.</p>
+  <% } %>
+  
+  <a href="/users/logout" class="profile-logout-btn">Cerrar sesión</a>
+</div>
+
+<%- include('../partials/footer') %>

@@ -1,0 +1,22 @@
+/* Estilo para el botón de ver detalle */
+.btn-detalle {
+    display: inline-block;
+    color: #007bff; /* Color del texto en azul */
+    text-decoration: none; /* Quitar subrayado */
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 2px solid #007bff; /* Borde azul */
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .btn-detalle:hover {
+    background-color: #007bff; /* Fondo azul en hover */
+    color: #fff; /* Texto en blanco en hover */
+  }
+  
+  .btn-detalle:active {
+    background-color: #0056b3; /* Fondo más oscuro al hacer clic */
+    color: #fff;
+  }
+  

@@ -1,0 +1,20 @@
+/* Botón de Vaciar Carrito en rojo */
+.btn-secondary.empty-cart-btn {
+    background-color: #dc3545;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-secondary.empty-cart-btn:hover {
+    background-color: #c82333;
+  }
+  
+  .btn-secondary.empty-cart-btn:active {
+    background-color: #bd2130;
+  }
+  
