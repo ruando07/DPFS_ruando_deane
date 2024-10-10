@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materiales Vásquez - Carrito</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="img/logo.png" alt="Materiales Vásquez Logo" />
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="login.html">Iniciar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <h2>Tu Carrito</h2>
+        <div id="lista-carrito"></div>
+        <h3 id="total"></h3>
+        <button onclick="vaciarCarrito()">Vaciar Carrito</button>
+    </section>
+
+    <script>
+        function mostrarCarrito() {
+            let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+            const listaCarrito = document.getElementById('lista-carrito');
+            let total = 0;
+
+            if (carrito.length === 0) {
+                listaCarrito.innerHTML = '<p>No tienes productos en tu carrito aún.</p>';
+                document.getElementById('total').textContent = '';
+                return;
+            }
+
+            listaCarrito.innerHTML = carrito.map(item => `
+                <div>
+                    <p>${item.producto} - $${item.precio}</p>
+                </div>
+            `).join('');
+
+            total = carrito.reduce((acc, item) => acc + item.precio, 0);
+            document.getElementById('total').textContent = `Total: $${total}`;
+        }
+
+        // Vaciar el carrito
+        function vaciarCarrito() {
+            localStorage.removeItem('carrito');
+            mostrarCarrito();
+            actualizarContadorCarrito();
+        }
+
+        mostrarCarrito();
+    </script>
+</body>
+</html>

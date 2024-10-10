@@ -1,0 +1,132 @@
+/* Estilos del header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 1rem;
+    color: #fff;
+}
+
+/* Logo a la izquierda */
+.logo img {
+    height: 50px;
+}
+
+/* Centralizar el menú de navegación */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Alineación del carrito y usuario a la derecha */
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.header-right ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+}
+
+.header-right ul li {
+    display: inline-block;
+}
+
+.header-right ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+.productos {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.producto {
+    width: 200px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.producto img {
+    width: 100%;
+    height: auto;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #218838;
+}
+/* Estilos para la imagen del carrito y contador de artículos */
+.carrito-icon {
+    width: 30px;
+    height: 30px;
+    position: relative;
+}
+
+#cart-count {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+/* Animación del botón cuando se agrega un producto */
+@keyframes add-to-cart {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+    100% { transform: scale(1); }
+}
+
+/* Añadir una clase de animación */
+.added {
+    animation: add-to-cart 0.5s ease;
+}
+
+
+/* Ajustes para dispositivos móviles */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header-right {
+        margin-top: 10px;
+    }
+
+    nav ul,
+    .header-right ul {
+        flex-direction: column;
+    }
+}

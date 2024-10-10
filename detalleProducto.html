@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle del Producto</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="img/logo.png" alt="Materiales Vásquez Logo" />
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="carrito.html">Carrito</a></li>
+                <li><a href="productos.html">Productos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="detalle-producto">
+        <h2>Detalle del Producto</h2>
+        <div id="producto-detalle"></div>
+    </section>
+
+    <script>
+        // Datos de ejemplo de productos
+        const productos = [
+            { id: 1, nombre: "Cemento", descripcion: "Saco de cemento de alta calidad.", precio: 100, imagen: "img/cemento.jpg" },
+            { id: 2, nombre: "Ladrillos", descripcion: "Paquete de 100 ladrillos resistentes.", precio: 50, imagen: "img/ladrillos.jpg" }
+        ];
+
+        // Obtener el ID del producto desde la URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = parseInt(urlParams.get('id'));
+
+        // Encontrar el producto con el ID correspondiente
+        const producto = productos.find(p => p.id === productId);
+
+        // Mostrar detalles del producto
+        if (producto) {
+            const productoDetalle = document.getElementById('producto-detalle');
+            productoDetalle.innerHTML = `
+                <img src="${producto.imagen}" alt="${producto.nombre}">
+                <h3>${producto.nombre}</h3>
+                <p>${producto.descripcion}</p>
+                <p>Precio: $${producto.precio}</p>
+                <button onclick="agregarAlCarrito('${producto.nombre}', ${producto.precio})">Agregar al Carrito</button>
+            `;
+        }
+
+        // Función para agregar productos al carrito
+        function agregarAlCarrito(producto, precio) {
+            let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+            carrito.push({ producto, precio });
+            localStorage.setItem('carrito', JSON.stringify(carrito));
+            alert(`${producto} agregado al carrito por $${precio}`);
+        }
+    </script>
+</body>
+</html>
