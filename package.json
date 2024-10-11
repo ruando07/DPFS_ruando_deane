@@ -1,15 +1,45 @@
 {
-  "name": "materialesvasquez",
+  "name": "dpfs_ruando_deane",
   "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "description": "Proyecto e-commerce",
+  "main": "app.js",
+  "engines": {
+    "node": "20.x"
   },
-  "keywords": [],
-  "author": "",
+  "scripts": {
+    "start": "nodemon app.js",
+    "dev": "nodemon app.js",
+    "build": "echo 'build step'",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "migrate": "sequelize db:migrate",
+    "seed": "sequelize db:seed:all"
+  },
+  "keywords": [
+    "e-commerce",
+    "nodejs",
+    "express",
+    "ejs"
+  ],
+  "author": "Ruando Deane",
   "license": "ISC",
-  "description": "",
   "dependencies": {
-    "express": "^4.21.1"
+    "bcryptjs": "^2.4.3",
+    "connect-redis": "^6.0.0",
+    "cors": "^2.8.5",
+    "ejs": "^3.1.10",
+    "express": "^4.21.0",
+    "express-session": "^1.18.0",
+    "express-validator": "^7.2.0",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.12.3",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "mysql2": "^3.11.3",
+    "redis": "^4.6.0",
+    "sequelize": "^6.37.3",
+    "sequelize-cli": "^6.6.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
   }
 }
