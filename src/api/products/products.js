@@ -37,7 +37,7 @@ router.get('/:id', (req, res) => {
     id: product.id,
     name: product.name,
     description: product.description,
-    imageURL: `/images/products/${product.image}`
+    imageURL: `/images/img/products/${product.image}`
   });
 });
 

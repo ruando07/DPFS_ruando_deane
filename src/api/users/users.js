@@ -3,8 +3,8 @@ const router = express.Router();
 
 // Simulación de base de datos de usuarios
 const users = [
-  { id: 1, name: 'John Doe', email: 'john@example.com' },
-  { id: 2, name: 'Jane Doe', email: 'jane@example.com' }
+  { id: 1, name: 'Ruando Deane', email: 'rd07@example.com' },
+  { id: 2, name: 'Anel castillo', email: 'ac5667@example.com' }
 ];
 
 // Endpoint para obtener todos los usuarios

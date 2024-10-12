@@ -12,13 +12,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(email)) {
             valid = false;
-            errors.push('Debe ser un formato de email válido.');
+            errors.push('formato de email no válido.');
         }
 
         // Validar contraseña
         if (password.length < 8) {
             valid = false;
-            errors.push('La contraseña debe tener al menos 8 caracteres.');
+            errors.push('debe contener 8 caracteres como minimo');
         }
 
         if (!valid) {

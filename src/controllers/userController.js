@@ -22,7 +22,7 @@ module.exports = {
             const existingUser = await db.User.findOne({ where: { email: req.body.email } });
             if (existingUser) {
                 return res.render('users/register', {
-                    errors: [{ msg: 'El email ya está registrado' }],
+                    errors: [{ msg: 'El email ya existe' }],
                     oldData: req.body
                 });
             }
@@ -38,29 +38,29 @@ module.exports = {
 
             res.redirect('/users/login');
         } catch (error) {
-            console.error('Error al registrar el usuario:', error);
-            res.status(500).send('Error en el servidor');
+            console.error('Error en el registro:', error);
+            res.status(500).send('Error del servidor');
         }
     },
 
-    // Formulario de inicio de sesión
+   
     loginForm: (req, res) => {
         res.render('users/login', { errors: [] });
     },
 
-    // Inicio de sesión
+ 
     login: async (req, res) => {
         const { email, password } = req.body;
 
         try {
             const user = await db.User.findOne({ where: { email } });
             if (!user) {
-                return res.render('users/login', { errors: [{ msg: 'Credenciales incorrectas.' }] });
+                return res.render('users/login', { errors: [{ msg: 'información incorrecta' }] });
             }
 
             const passwordMatches = await bcrypt.compare(password, user.password);
             if (!passwordMatches) {
-                return res.render('users/login', { errors: [{ msg: 'Credenciales incorrectas.' }] });
+                return res.render('users/login', { errors: [{ msg: 'Información incorrecta' }] });
             }
 
             req.session.user = {

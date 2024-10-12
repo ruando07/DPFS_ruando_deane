@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const db = require('../databas/models'); 
+const db = require('../database/models'); 
 router.get('/', async (req, res) => {
     try {
         const products = await db.Product.findAll(); 
@@ -14,7 +14,7 @@ router.get('/', async (req, res) => {
             }))
         });
     } catch (error) {
-        res.status(500).json({ error: 'Error al obtener los productos' });
+        res.status(500).json({ error: 'Error' });
     }
 });
 
@@ -31,7 +31,7 @@ router.get('/:id', async (req, res) => {
             imageUrl: `/images/products/${product.image}` 
         });
     } catch (error) {
-        res.status(500).json({ error: 'Error al obtener el producto' });
+        res.status(500).json({ error: 'Error' });
     }
 });
 

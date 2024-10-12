@@ -8,8 +8,8 @@ let productsControllers = {
             const categories = await db.Categoria.findAll(); // Obtener todas las categorías para el formulario
             res.render('productCreate', { categories }); // Renderizar la vista del formulario de creación y pasar las categorías
         } catch (error) {
-            console.error('Error al cargar el formulario de creación:', error);
-            res.status(500).send('Hubo un problema al cargar el formulario de creación');
+            console.error('Error en el formulario:', error);
+            res.status(500).send('Error en el formulario');
         }
     },
 
@@ -21,13 +21,8 @@ let productsControllers = {
         }
 
         try {
-            const { name, description, category_id, price, colors } = req.body;
+            const { name, description, price} = req.body;
             
-            if (!colors || colors.trim() === '') {
-                return res.status(400).send('El campo colors no puede estar vacío');
-            }
-    
-            const colorArray = colors.split(',').map(color => color.trim());
     
             const product = await db.Producto.create({
                 name,
@@ -37,12 +32,6 @@ let productsControllers = {
                 price,
                 colors: colorArray.join(',') // Si decides cambiar `colors` a un tipo STRING
             });
-    
-            const colorInstances = await db.Color.findAll({
-                where: { colorName: colorArray }
-            });
-    
-            await product.addColors(colorInstances);
     
             res.redirect('/products');
         } catch (error) {
@@ -54,7 +43,7 @@ let productsControllers = {
     list: async (req, res) => {
         try {
             const products = await db.Producto.findAll({
-                include: [{ model: db.Categoria }, { model: db.Color }]
+                include: [{ model: db.Categoria }]
             });
             res.render('products', { products });
         } catch (error) {
@@ -62,23 +51,6 @@ let productsControllers = {
             res.status(500).send('Error al obtener los productos');
         }
     }, 
-
-    edition: async (req, res) => {
-        try {
-            const productId = req.params.id;
-            const product = await db.Producto.findByPk(productId, {
-                include: [{ model: db.Color }]
-            });
-            const categories = await db.Categoria.findAll();
-    
-            if (!product) {
-                return res.status(404).send('Producto no encontrado');
-            }
-            res.render('productEdit', { product, categories });
-        } catch (error) {
-            res.status(500).send('Error al cargar el formulario de edición');
-        }
-    },
 
     modifying: async (req, res) => {
         const errors = validationResult(req);
@@ -91,7 +63,7 @@ let productsControllers = {
 
         try {
             const { id } = req.params;
-            const { name, description, category_id, price, colors } = req.body;
+            const { name, description, price} = req.body;
     
             const product = await db.Producto.findByPk(id);
     
@@ -102,7 +74,6 @@ let productsControllers = {
             const updatedProduct = {
                 name,
                 description,
-                category_id,
                 price,
             };
     

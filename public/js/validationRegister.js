@@ -14,30 +14,30 @@ document.addEventListener('DOMContentLoaded', () => {
         // Validar nombre y apellido
         if (firstName.length < 2) {
             valid = false;
-            errors.push('El nombre debe tener al menos 2 caracteres.');
+            errors.push('El nombre debe contener 2 caracteres como minimo');
         }
         if (lastName.length < 2) {
             valid = false;
-            errors.push('El apellido debe tener al menos 2 caracteres.');
+            errors.push('El apellido debe contener 2 caracteres como minimo');
         }
 
         // Validar email
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(email)) {
             valid = false;
-            errors.push('Debe ser un formato de email válido.');
+            errors.push('Debe ser un formato de email');
         }
 
         // Validar contraseña
         if (password.length < 8) {
             valid = false;
-            errors.push('La contraseña debe tener al menos 8 caracteres.');
+            errors.push('La contraseña debe contener 8 caracteres como minimo');
         }
 
         // Validación opcional para mayúsculas, minúsculas, número y carácter especial
         const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W)/;
         if (password && !passwordRegex.test(password)) {
-            errors.push('La contraseña debe incluir mayúsculas, minúsculas, un número y un carácter especial.');
+            errors.push('La contraseña debe contener mayúsculas, minúsculas, un número y también la menos un carácter especial');
         }
 
         // Validar imagen
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const fileExtension = image.split('.').pop().toLowerCase();
             if (!validExtensions.includes(fileExtension)) {
                 valid = false;
-                errors.push('La imagen debe ser un archivo válido (JPG, JPEG, PNG, GIF).');
+                errors.push('La imagen debe ser en alguno de estos formatos JPG, JPEG, PNG o GIF');
             }
         }
 

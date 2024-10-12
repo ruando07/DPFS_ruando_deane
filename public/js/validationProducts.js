@@ -12,13 +12,13 @@ document.addEventListener('DOMContentLoaded', () => {
         // Validar nombre
         if (name.length < 5) {
             valid = false;
-            errors.push('El nombre debe tener al menos 5 caracteres.');
+            errors.push('El nombre debe contener 5 caracteres como minimo');
         }
 
         // Validar descripción
         if (description.length < 10) {
             valid = false;
-            errors.push('La descripción debe tener al menos 10 caracteres.');
+            errors.push('La descripción debe contener 10ar cacteres como minimo');
         }
 
         // Validar imagen
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const fileExtension = image.split('.').pop().toLowerCase();
             if (!validExtensions.includes(fileExtension)) {
                 valid = false;
-                errors.push('La imagen debe ser un archivo válido (JPG, JPEG, PNG, GIF).');
+                errors.push('La imagen debe estar en un formato JPG, JPEG, PNG o GIF');
             }
         }
 

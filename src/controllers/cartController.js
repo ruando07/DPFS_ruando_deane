@@ -1,4 +1,4 @@
-// src/controllers/cartController.js
+
 
 let cart = [];
 
@@ -9,10 +9,10 @@ exports.addToCart = (req, res) => {
   const productIndex = cart.findIndex(item => item.productId === productId);
 
   if (productIndex > -1) {
-    // Si el producto ya está en el carrito, actualizamos la cantidad
+   
     cart[productIndex].quantity += quantity;
   } else {
-    // Si no está, lo agregamos al carrito
+   
     cart.push({ productId, quantity });
   }
 

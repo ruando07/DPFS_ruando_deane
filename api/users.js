@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
             }))
         });
     } catch (error) {
-        res.status(500).json({ error: 'Error al obtener los usuarios' });
+        res.status(500).json({ error: 'Error en el ususario' });
     }
 });
 
@@ -35,7 +35,7 @@ router.get('/:id', async (req, res) => {
             profileImage: `/images/users/${user.profileImage}` // Ajusta según tu estructura
         });
     } catch (error) {
-        res.status(500).json({ error: 'Error al obtener el usuario' });
+        res.status(500).json({ error: 'Error' });
     }
 });
 

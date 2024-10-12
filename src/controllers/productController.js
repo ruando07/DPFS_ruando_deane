@@ -8,7 +8,7 @@ const productController = {
       res.render('products/list', { products });
     } catch (error) {
       console.log(error);
-      res.render('error', { error: 'Error al listar los productos' });
+      res.render('error', { error: 'Error al enlistar' });
     }
   },
 
@@ -18,7 +18,7 @@ const productController = {
       res.render('products/detail', { product });
     } catch (error) {
       console.log(error);
-      res.render('error', { error: 'Error al mostrar el detalle del producto' });
+      res.render('error', { error: 'Error en el detalle' });
     }
   },
 
@@ -38,12 +38,12 @@ const productController = {
     try {
       const newProduct = await db.Product.create({
         ...req.body,
-        image: req.file ? req.file.filename : null  // Asegura que el archivo se guarde correctamente
+        image: req.file ? req.file.filename : null  
       });
       res.redirect('/products');
     } catch (error) {
       console.log(error);
-      res.render('products/create', { error: 'Error al crear el producto' });
+      res.render('products/create', { error: 'Error al crear' });
     }
   },
 
@@ -73,7 +73,7 @@ const productController = {
 
       await db.Product.update({
         ...req.body,
-        image: req.file ? req.file.filename : product.image  // Si hay una nueva imagen, se actualiza
+        image: req.file ? req.file.filename : product.image  
       }, {
         where: { id: req.params.id }
       });
@@ -81,7 +81,7 @@ const productController = {
       res.redirect('/products');
     } catch (error) {
       console.log(error);
-      res.render('products/edit', { error: 'Error al actualizar el producto' });
+      res.render('products/edit', { error: 'Error en la actualización' });
     }
   },
 
@@ -91,7 +91,7 @@ const productController = {
       res.redirect('/products');
     } catch (error) {
       console.log(error);
-      res.render('error', { error: 'Error al eliminar el producto' });
+      res.render('error', { error: 'Error al momento de eliminar' });
     }
   }
 };
