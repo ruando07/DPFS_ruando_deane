@@ -25,3 +25,8 @@ https://www.evisionstore.com/
 https://www.perfumeriamiracle.com/
 
 todos estos sistios tienen sus particularidades que me einspiraron en este proyecto de ecommerce. Cada uno refleja la identidad de sus empresas y su visión en cuanto a las ventas online de sus productos y servicios
+
+
+
+# Tablero de trabajo en trello
+https://trello.com/invite/b/670f5df7eb713bf52bd22eb9/ATTI581523c33c5b13863363f7f275af79664E14B415/materiales-vasquez-ecommerce
